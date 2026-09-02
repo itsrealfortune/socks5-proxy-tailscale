@@ -98,7 +98,7 @@ environment:
 **`Dockerfile`** - Debian `bookworm-slim` base with:
 
 - `tailscaled` / `tailscale` (installed from the official Tailscale apt repo)
-- `redsocks`, `stunnel4`, `socat` for proxying
+- `redsocks`, `stunnel4` for proxying
 - `iptables`, `iproute2` for traffic redirection
 
 **`entrypoint.sh`** - Startup order:
