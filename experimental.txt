@@ -1,0 +1,2 @@
+#82.65.220.152:80	HTTP	HIA	FR	aubonheurdesasturies.hd.free.fr
+176.191.124.3:80	HTTP	ANM	FR Grenoble (Isère)	static-176-191-124-3.ftth.abo.bbox.fr (Bouygues Telecom SA)

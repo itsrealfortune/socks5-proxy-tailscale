@@ -1,0 +1,22 @@
+services:
+  exit-node:
+    build: .
+    container_name: exit-node-via-proxy
+    hostname: exit-node-via-proxy
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv6.conf.all.forwarding=1
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_HOSTNAME=exit-node-via-proxy
+      - UPSTREAM_PROXY_HOST=${UPSTREAM_PROXY_HOST}
+      - UPSTREAM_PROXY_PORT=${UPSTREAM_PROXY_PORT}
+      - UPSTREAM_PROXY_USER=${UPSTREAM_PROXY_USER}
+      - UPSTREAM_PROXY_PASS=${UPSTREAM_PROXY_PASS}
+    volumes:
+      - ./data:/var/lib/tailscale
+    restart: unless-stopped
